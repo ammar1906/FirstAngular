@@ -1,0 +1,25 @@
+<!--<input type="text" [value] (keyup.enter)="adduser(usertoadd)" #usertoadd>
+
+
+@for(user of users ; track user) {
+
+    <h3>{{user}}</h3>
+    <button (click)="removeUser(user)">delete</button>
+}
+
+-->  
+<h1 class="title">library</h1>
+
+
+  <input class="inp" type="text" placeholder="ADD BOOK and press ENTER" [(ngModel)]="booktoadd" (keyup.enter)="addbook(newest) ; booktoadd=''" #newest>
+  <ul class="table"> 
+@for(book of books ; track book){
+ <li class="book">
+    <h3 class="id">{{book.id}}  </h3>
+    <h3 class="bookname">{{book.bookname}}</h3>
+    <button [style.margin-left]="'50px'" (click)="removebook(book)" >remove</button>
+    <button [style.margin-left]="'50px'" (click)="updatebook(book)" >update </button>
+
+  </li>
+  }
+</ul>
